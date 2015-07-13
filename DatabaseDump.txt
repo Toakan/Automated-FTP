@@ -1,0 +1,37 @@
+@echo off
+setlocal EnableDelayedExpansion
+title MySql Backup
+set "user=$DBUsername$"
+set "pass=$DBPassword$"
+set dest=c:\Backups
+set var1=$Tablename$
+:a
+cls
+
+Echo Choose a Database to dump:
+echo =========================
+Echo 1 = %Var1%
+echo =========================
+
+
+choice /c 12 /t 60 /D 8 /M "Choose a DB to dump"
+
+if errorlevel 1 set Vars=%var1%
+if errorlevel 2 set Vars=None:
+
+ECHO You chose to format %Vars%
+
+
+Echo Starting Backup of %Vars%
+$location of MySQLdump.exe$\mysqldump --user %user% --password=%pass% %Vars% > c:\Backups\%DAY%\%Vars%.sql
+Echo Processed
+echo -------------------------
+pause
+goto :a
+
+
+
+
+
+echo /==================================================================\
+echo Credits Belong to Thomas Daykin / @Toakan for the script generalisation. Please leave this readme / credits in when using the files.

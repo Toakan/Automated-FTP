@@ -1,0 +1,34 @@
+set dest=c:\Backups
+
+del ftpcmd.dat
+del logfile.txt
+del errorlog.txt
+
+echo starting FTP Backup
+echo --------------------
+echo starting Website Backup
+"C:\Program Files\7-Zip\"7zG.exe a -tzip $ZipName$ "C:\$FoldertoZip$"
+
+echo Folder Zip finished
+
+echo user $FTPUSERNAME$ $FTPPassword$ >> ftpcmd.dat
+
+echo lcd /D "c:\$location of files$" >> ftpcmd.dat
+echo cd $FTPDirectory$/ >> ftpcmd.dat
+echo put $SQLDump$.sql >> ftpcmd.dat
+echo put $ZipName$ >> ftpcmd.dat
+echo quit>> ftpcmd.dat
+
+
+Echo ------------------------
+echo FTP File created
+echo ------------------------
+
+ftp -n -s:ftpcmd.dat $FTPADDRESS$ >logfile.txt 2>errorlog.txt
+
+
+
+
+
+echo /==================================================================\
+echo Credits Belong to Thomas Daykin / @Toakan for the script generalisation. Please leave this readme / credits in when using the files.
