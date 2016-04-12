@@ -19,7 +19,7 @@ choice /c 12 /t 60 /D 8 /M "Choose a DB to dump"
 if errorlevel 1 set Vars=%var1%
 if errorlevel 2 set Vars=None:
 
-ECHO You chose to format %Vars%
+ECHO You chose to dump %Vars%
 
 
 Echo Starting Backup of %Vars%
