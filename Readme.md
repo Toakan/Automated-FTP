@@ -17,3 +17,5 @@ DatabaseDump is the tidy command-line tool used to dump a MySQL table from the s
 FTPCreate is an automated script which will create an FTP session, build the file list to upload, then commit the changes.
 
 Again, these files require user changes to work. For quick reference the changes are the areas within dollar tags IE = $text$
+
+To get started, simply rename the script you wish to use with the .bat extension and edit the file to input your required information. 
