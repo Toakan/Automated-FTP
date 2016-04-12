@@ -1,3 +1,12 @@
+#About#
+> An automatic MySql table dumper and FTP Session creater for windows.
+
+##Pre-requisites:##
+- Filezilla
+- 7zip
+- MySql server
+
+##Content##
 To start with, there are two files available to use.
 /===================================================\
 DatabaseDump.txt
